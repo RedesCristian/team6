@@ -1,2 +1,2 @@
-import './js/locliber1';
+import './js/carousel';
 import './js/locliber2';
