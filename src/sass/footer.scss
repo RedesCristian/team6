@@ -1,0 +1,15 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 28px 0;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 320px;
+  }
+  &__text {
+    color: #545454;
+  }
+}
