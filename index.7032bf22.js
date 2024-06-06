@@ -1,0 +1,2 @@
+var themeToggleBtn=document.getElementById("theme-toggle-btn"),body=document.body;themeToggleBtn.addEventListener("click",(function(){body.classList.contains("light-mode")?(body.classList.remove("light-mode"),body.classList.add("dark-mode"),themeToggleBtn.textContent="Light"):(body.classList.remove("dark-mode"),body.classList.add("light-mode"),themeToggleBtn.textContent="Dark")}));
+//# sourceMappingURL=index.7032bf22.js.map
