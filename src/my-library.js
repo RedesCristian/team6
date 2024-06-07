@@ -1,3 +1,3 @@
 import './js/carousel';
-import './js/locliber2';
+import './js/footer.js';
 import './js/dark-mode';
