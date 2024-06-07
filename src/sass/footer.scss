@@ -43,6 +43,14 @@
 .icon-Group {
   width: 1.0771484375em;
 }
+.svg-close {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
 
 .modal {
   background-color: rgba(0, 0, 0, 0.4);
@@ -58,7 +66,27 @@
 
 .modal-content {
   background-color: #fff;
-  width: 60%;
+  width: 80%;
   padding: 20px;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.close:hover {
+  opacity: 1;
+}
+.modal-list {
+  list-style: none;
 }
