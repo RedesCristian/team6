@@ -1,4 +1,5 @@
 .footer {
+  width: 100%;
   display: flex;
   justify-content: center;
   padding: 28px 0;
@@ -53,7 +54,7 @@
 }
 
 .modal {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
   left: 0;
   top: 0;
@@ -62,14 +63,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 3;
 }
 
 .modal-content {
-  background-color: #fff;
+  background-image: url(/src/images/header-image/orange-cover.jpg);
   width: 80%;
   padding: 20px;
   border-radius: 5px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -83,10 +86,34 @@
   opacity: 0.3;
   cursor: pointer;
   border-radius: 50%;
+  background-color: #c09393;
 }
 .close:hover {
   opacity: 1;
+  box-shadow: 0 0 10px 0 #9c1212 inset, 0 0 10px 4px #9c1212;
+  color: rgba(23, 23, 2, 0.813);
 }
 .modal-list {
   list-style: none;
+}
+.inlink {
+  border-color: #3498db;
+  color: #0c0d0e;
+  box-shadow: 0 0 25px 25px #aa3207 inset, 0 0 0 0 #aa3207;
+  transition: all 150ms ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 10px 0 #aa3207 inset, 0 0 10px 4px #aa3207;
+    color: rgba(23, 23, 2, 0.813);
+  }
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 16px;
+}
+.modal-header {
+  color: rgba(42, 42, 28, 0.813);
+  &:hover {
+    box-shadow: 0 0 10px 0 #9c1212 inset, 0 0 10px 4px #9c1212;
+    color: rgba(23, 23, 2, 0.813);
+  }
 }
