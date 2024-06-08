@@ -54,66 +54,57 @@
 }
 
 .modal {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5); /* Fundal semitransparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 3;
+  z-index: 1000;
 }
-
 .modal-content {
-  background-image: url(/src/images/header-image/orange-cover.jpg);
-  width: 80%;
+  background-color: #212529; /* Fundal negru */
   padding: 20px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
   position: relative;
 }
-.close {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 32px;
-  height: 32px;
-  opacity: 0.3;
-  cursor: pointer;
-  border-radius: 50%;
-  background-color: #c09393;
+.modal-header {
+  color: #ffc107; /* Text portocaliu */
+  margin-bottom: 15px;
 }
-.close:hover {
-  opacity: 1;
-  box-shadow: 0 0 10px 0 #9c1212 inset, 0 0 10px 4px #9c1212;
-  color: rgba(23, 23, 2, 0.813);
+.modal-header:hover {
+  filter: drop-shadow(0 0 0.75rem #ffc107);
 }
 .modal-list {
   list-style: none;
+  padding: 0;
 }
 .inlink {
-  border-color: #3498db;
-  color: #0c0d0e;
-  box-shadow: 0 0 25px 25px #aa3207 inset, 0 0 0 0 #aa3207;
-  transition: all 150ms ease-in-out;
-
-  &:hover {
-    box-shadow: 0 0 10px 0 #aa3207 inset, 0 0 10px 4px #aa3207;
-    color: rgba(23, 23, 2, 0.813);
-  }
-  border-radius: 10px;
+  color: #ffc107; /* Linkuri portocalii */
   text-decoration: none;
-  font-size: 16px;
 }
-.modal-header {
-  color: rgba(42, 42, 28, 0.813);
-  &:hover {
-    box-shadow: 0 0 10px 0 #9c1212 inset, 0 0 10px 4px #9c1212;
-    color: rgba(23, 23, 2, 0.813);
-  }
+.inlink:hover {
+  filter: drop-shadow(0 0 0.75rem #ffc107);
+}
+.inlink svg {
+  fill: #ffc107; /* Iconițe portocalii */
+}
+.close {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.close:hover {
+  filter: drop-shadow(0 0 0.75rem #ffc107);
+}
+.svg-close {
+  fill: #ffc107; /* Iconiță de închidere portocalie */
 }

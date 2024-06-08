@@ -11,10 +11,14 @@
         >
           My Library
         </button>
-        <div class="btn-right-nav">
-          <button class="watched-btn">Watched</button>
-          <button class="queue-btn">Queue</button>
-        </div>
+        <form action="/search_results" method="get">
+          <input
+            type="search"
+            id="search"
+            name="search"
+            placeholder="Movie Search"
+          />
+        </form>
         <button id="theme-toggle-btn" class="theme-toggle-btn">Dark</button>
       </nav>
       <div class="logo-container">
