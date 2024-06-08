@@ -66,11 +66,15 @@
   z-index: 1000;
 }
 .modal-content {
+  width: 40%;
   background-color: #212529; /* Fundal negru */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 .modal-header {
