@@ -2,23 +2,19 @@
   <div class="carousel">
     <div class="container">
       <nav class="nav">
-        <button class="home-btn" onclick="location.href='/src/index.html'">
+        <button class="home-btn" onclick="location.href='../index.html'">
           Home
         </button>
         <button
           class="library-btn"
-          onclick="location.href='/src/my-library.html'"
+          onclick="location.href='../my-library.html'"
         >
           My Library
         </button>
-        <form action="/search_results" method="get">
-          <input
-            type="search"
-            id="search"
-            name="search"
-            placeholder="Movie Search"
-          />
-        </form>
+        <div class="btn-right-nav">
+          <button class="watched-btn">Watched</button>
+          <button class="queue-btn">Queue</button>
+        </div>
         <button id="theme-toggle-btn" class="theme-toggle-btn">Dark</button>
       </nav>
       <div class="logo-container">
