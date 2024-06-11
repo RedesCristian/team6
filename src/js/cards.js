@@ -125,7 +125,7 @@ async function openModal(id) {
     `;
 
   const modal = document.createElement('div');
-  modal.classList.add('modal');
+  modal.classList.add('modal-modal');
   modal.innerHTML = modalContent;
   document.body.appendChild(modal);
   modal.style.display = 'block';
