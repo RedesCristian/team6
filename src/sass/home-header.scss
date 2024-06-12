@@ -71,7 +71,18 @@
     }
   }
 }
-
+.theme-toggle {
+  position: absolute;
+  left: 0;
+  top: -12px;
+  border-radius: 20px;
+  border: none;
+  border: no border;
+  background-color: transparent;
+}
+.theme-toggle:hover {
+  cursor: pointer;
+}
 .header-home__wrapper {
   margin-bottom: 312px;
 
