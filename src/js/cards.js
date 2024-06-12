@@ -85,47 +85,47 @@ async function openModal(id) {
   const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
   const modalContent = `
-        <div class="modal-content">
-            <span class="modal-close-button">&times;</span>
-            <img class="modal-poster-card" src="${
+        <div class="cards-modal-content">
+            <span class="cards-modal-close-button">&times;</span>
+            <img class="cards-modal-poster-card" src="${
               BASE_IMG_URL + movieData.poster_path
             }" alt="Photo" loading="lazy" />
-            <div class="modal-div-info">
-                <h2 class="modal-title">${movieData.title}</h2>
-                <div class="modal-details">
+            <div class="cards-modal-div-info">
+                <h2 class="cards-modal-title">${movieData.title}</h2>
+                <div class="cards-modal-details">
                     <span class="label">Vote / Votes</span>
                     <span class="value">${movieData.vote_average} / ${
     movieData.vote_count
   }</span>
                 </div>
-                <div class="modal-details">
+                <div class="cards-modal-details">
                     <span class="label">Popularity</span>
                     <span class="value">${movieData.popularity}</span>
                 </div>
-                <div class="modal-details">
+                <div class="cards-modal-details">
                     <span class="label">Original Title</span>
                     <span class="value">${movieData.original_title}</span>
                 </div>
-                <div class="modal-details">
+                <div class="cards-modal-details">
                     <span class="label">Genre</span>
                     <span class="value">${movieData.genres
                       .map(genre => genre.name)
                       .join(', ')}</span>
                 </div>
-                <div class="modal-about">
+                <div class="cards-modal-about">
                     <span class="label">About</span>
                     <span class="value">${movieData.overview}</span>
                 </div>
-                <div class="modal-buttons">
-                    <button class="modal-button watch">ADD TO WATCHED</button>
-                    <button class="modal-button queue">ADD TO QUEUE</button>
+                <div class="cards-modal-buttons">
+                    <button class="cards-modal-button watch">ADD TO WATCHED</button>
+                    <button class="cards-modal-button queue">ADD TO QUEUE</button>
                 </div>
             </div>
         </div>
     `;
 
   const modal = document.createElement('div');
-  modal.classList.add('modal-modal');
+  modal.classList.add('cards-modal-modal');
   modal.innerHTML = modalContent;
   document.body.appendChild(modal);
   modal.style.display = 'block';
@@ -137,7 +137,7 @@ async function openModal(id) {
   };
 
   modal
-    .querySelector('.modal-close-button')
+    .querySelector('.cards-modal-close-button')
     .addEventListener('click', closeModal);
 
   window.addEventListener('click', event => {
