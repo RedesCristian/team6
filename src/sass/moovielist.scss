@@ -56,7 +56,7 @@
   margin-top: -8px;
 }
 
-.modal-modal {
+.cards-modal-modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -70,7 +70,7 @@
   padding-top: 60px;
 }
 
-.modal-content {
+.cards-modal-content {
   background-color: #fefefe;
   margin: 5% auto;
   padding: 20px;
@@ -85,7 +85,7 @@
   position: relative;
 }
 
-.modal-close-button {
+.cards-modal-close-button {
   color: #aaa;
   font-size: 28px;
   font-weight: bold;
@@ -95,72 +95,72 @@
   right: 10px;
 }
 
-.modal-close-button:hover,
-.modal-close-button:focus {
+.cards-modal-close-button:hover,
+.cards-modal-close-button:focus {
   color: black;
   text-decoration: none;
 }
 
-.modal-poster-card {
+.cards-modal-poster-card {
   max-width: 40%;
   border-radius: 10px;
   margin-right: 20px;
 }
 
-.modal-div-info {
+.cards-modal-div-info {
   text-align: left;
   width: 100%;
 }
 
-.modal-details {
+.cards-modal-details {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
 }
 
-.modal-details span.label {
+.cards-modal-details span.label {
   color: #8c8c8c;
   margin-bottom: 2px;
 }
 
-.modal-details span.value {
+.cards-modal-details span.value {
   font-size: 16px;
   font-weight: bold;
 }
 
-.modal-title {
+.cards-modal-title {
   font-size: 24px;
   font-weight: bold;
   margin-top: 0;
   color: #000;
 }
 
-.modal-about {
+.cards-modal-about {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
 
-.modal-about .label {
+.cards-modal-about .label {
   font-size: 16px;
   color: gray;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-.modal-about .value {
+.cards-modal-about .value {
   font-size: 14px;
   line-height: 1.5;
   color: #000;
 }
 
-.modal-buttons {
+.cards-modal-buttons {
   display: flex;
   gap: 10px;
   margin-top: 20px;
 }
 
-.modal-button {
+.cards-modal-button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -168,24 +168,24 @@
   font-size: 16px;
 }
 
-.modal-button.watch {
+.cards-modal-button.watch {
   background-color: #007bff;
   color: white;
 }
 
-.modal-button.queue {
+.cards-modal-button.queue {
   background-color: #6c757d;
   color: white;
 }
 
 @media (max-width: 600px) {
-  .modal-content {
+  .cards-modal-content {
     width: 90%;
     flex-direction: column;
     align-items: center;
   }
 
-  .modal-poster-card {
+  .cards-modal-poster-card {
     max-width: 100%;
     margin-right: 0;
     margin-bottom: 20px;
