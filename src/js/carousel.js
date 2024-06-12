@@ -1,14 +1,10 @@
-<<<<<<< Updated upstream
-document.addEventListener('DOMContentLoaded', function() {
-  const images = document.querySelectorAll('.carousel-img');
-  let currentImageIndex = 0;
-  const totalImages = images.length;
-=======
+
+
 document.addEventListener('DOMContentLoaded', function () {
   const mobileImages = document.querySelectorAll('.mobile-carousel-img');
   let currentMobileImageIndex = 0;
   const totalMobileImages = mobileImages.length;
->>>>>>> Stashed changes
+
 
   function showMobileImage(index) {
     mobileImages.forEach((img, i) => {
@@ -29,8 +25,4 @@ document.addEventListener('DOMContentLoaded', function () {
   setInterval(nextMobileImage, 4000); 
   showMobileImage(currentMobileImageIndex); 
 
-<<<<<<< Updated upstream
-  showImage(currentImageIndex); 
-=======
->>>>>>> Stashed changes
 });
