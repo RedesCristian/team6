@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 const themeToggleBtn = document.getElementById('theme-toggle-btn');
 const body = document.body;
 
@@ -14,3 +15,5 @@ themeToggleBtn.addEventListener('click', () => {
     themeToggleBtn.textContent = 'Dark';
   }
 });
+=======
+>>>>>>> Stashed changes
