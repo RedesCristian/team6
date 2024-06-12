@@ -118,3 +118,12 @@
   fill: #ffc107; /* Iconiță de închidere portocalie */
 }
 
+@media screen and (max-width: 768px) {
+  .footer__container {
+    display: block;
+    margin-left: 65px;
+  }
+  .rights-reserved {
+    margin-left: 23px;
+  }
+}
