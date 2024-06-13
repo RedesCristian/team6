@@ -196,6 +196,11 @@
   padding: 14px 32px;
 }
 
+.cards-modal-button.remove {
+  background-color: #b92f2c;
+  color: white;
+}
+
 @media (max-width: 600px) {
   .cards-modal-content {
     width: 90%;
