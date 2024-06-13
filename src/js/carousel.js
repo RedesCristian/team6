@@ -1,28 +1,31 @@
-
-
 document.addEventListener('DOMContentLoaded', function () {
-  const mobileImages = document.querySelectorAll('.mobile-carousel-img');
-  let currentMobileImageIndex = 0;
-  const totalMobileImages = mobileImages.length;
+  const carouselImages = document.querySelectorAll('.carousel-img');
+  let currentImageIndex = 0;
+  const totalImages = carouselImages.length;
 
-
-  function showMobileImage(index) {
-    mobileImages.forEach((img, i) => {
-      const shouldBeActive = i === index;
-      if (shouldBeActive) {
-        img.classList.add('active');
+  // Funcție pentru afișarea unei imagini din carusel
+  function showImage(index) {
+    // Iterăm prin toate imaginile caruselului
+    carouselImages.forEach((img, i) => {
+      // Verificăm dacă indexul imaginii curente coincide cu indexul dat
+      if (i === index) {
+        img.classList.add('active'); // Afișăm imaginea curentă
       } else {
-        img.classList.remove('active');
+        img.classList.remove('active'); // Ascundem celelalte imagini
       }
     });
   }
 
-  function nextMobileImage() {
-    currentMobileImageIndex = (currentMobileImageIndex + 1) % totalMobileImages;
-    showMobileImage(currentMobileImageIndex);
+  // Funcție pentru a avansa la următoarea imagine din carusel
+  function nextImage() {
+    // Incrementăm indexul imaginii curente și revenim la prima imagine după ultima
+    currentImageIndex = (currentImageIndex + 1) % totalImages;
+    showImage(currentImageIndex);
   }
 
-  setInterval(nextMobileImage, 4000); 
-  showMobileImage(currentMobileImageIndex); 
+  // Setăm un interval pentru a schimba imaginea la fiecare 4 secunde
+  setInterval(nextImage, 4000);
 
+  // Afișăm imaginea curentă la încărcarea paginii
+  showImage(currentImageIndex);
 });
