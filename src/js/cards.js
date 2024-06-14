@@ -78,7 +78,7 @@ function renderGallery(posters) {
   });
 }
 
-async function openModal(id) {
+export async function openModal(id) {
   const API_KEY = '904cc36a32d92a605c14a646cc21fc67';
   const URL = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`;
 
@@ -152,7 +152,6 @@ async function openModal(id) {
       }
     });
 
-    // Actualizează starea butoanelor în funcție de prezența filmului în biblioteca locală
     updateButtonState('watched', movieData.id, 'toggle-watched');
     updateButtonState('queue', movieData.id, 'toggle-queue');
 
