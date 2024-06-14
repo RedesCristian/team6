@@ -8,9 +8,9 @@ import Notiflix from 'notiflix';
 const galleryLibrary = document.querySelector('.galleryLibrary');
 
 if (
+  window.location.pathname === '/' ||
   window.location.pathname ===
-    'https://redescristian.github.io/team6/my-library.html' ||
-  window.location.pathname === '/my-library.html'
+    'https://redescristian.github.io/team6/my-library.html'
 ) {
   displayMovies('watched');
 }
