@@ -20,7 +20,8 @@ async function fetchPosters() {
 }
 
 if (
-  window.location.pathname === '/' ||
+  window.location.pathname ===
+    'https://redescristian.github.io/team6/index.html' ||
   window.location.pathname === '/index.html'
 ) {
   fetchPosters();
