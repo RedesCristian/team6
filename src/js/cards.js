@@ -4,7 +4,8 @@ import Notiflix from 'notiflix';
 const gallery = document.querySelector('.galleryPopular');
 
 if (
-  window.location.pathname === 'https://redescristian.github.io/team6/' ||
+  window.location.pathname ===
+    'https://redescristian.github.io/team6/index.html' ||
   window.location.pathname === '/index.html'
 ) {
   fetchPosters();
