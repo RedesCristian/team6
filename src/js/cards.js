@@ -1,6 +1,22 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
 
+if (
+  window.location.pathname === '/' ||
+  window.location.pathname === '/index.html'
+) {
+  fetchPosters();
+}
+
+if (
+  window.location.pathname === '/' ||
+  window.location.pathname === 'https://redescristian.github.io/team6/' ||
+  window.location.pathname ===
+    'https://redescristian.github.io/team6/index.html'
+) {
+  fetchPosters();
+}
+
 const gallery = document.querySelector('.galleryPopular');
 
 async function fetchPosters() {
@@ -17,14 +33,6 @@ async function fetchPosters() {
       'Failed to fetch popular movies. Please try again later.'
     );
   }
-}
-
-if (
-  window.location.pathname === '/' ||
-  window.location.pathname ===
-    'https://redescristian.github.io/team6/index.html'
-) {
-  fetchPosters();
 }
 
 const genreMap = {
