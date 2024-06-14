@@ -19,7 +19,12 @@ async function fetchPosters() {
   }
 }
 
-fetchPosters();
+if (
+  window.location.pathname === '/' ||
+  window.location.pathname === '/index.html'
+) {
+  fetchPosters();
+}
 
 const genreMap = {
   28: 'Action',
