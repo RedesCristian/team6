@@ -5,6 +5,7 @@ const gallery = document.querySelector('.galleryPopular');
 
 if (
   window.location.pathname === '/index.html' ||
+  window.location.pathname === '/' ||
   window.location.pathname === '/team6/index.html'
 ) {
   fetchPosters();
