@@ -9,8 +9,7 @@ const galleryLibrary = document.querySelector('.galleryLibrary');
 
 if (
   window.location.pathname === '/my-library.html' ||
-  window.location.pathname === '/team6/my-library.html' ||
-  window.location.pathname.includes('/team6/my-library.html')
+  window.location.pathname === '/team6/my-library.html'
 ) {
   displayMovies('watched');
 }
