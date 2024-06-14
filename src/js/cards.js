@@ -4,9 +4,11 @@ import Notiflix from 'notiflix';
 const gallery = document.querySelector('.galleryPopular');
 
 if (
-  window.location.pathname === '/index.html' ||
-  window.location.pathname === '/' ||
-  window.location.pathname === '/team6/index.html'
+  (window.location.pathname === '/index.html' ||
+    window.location.pathname === '/' ||
+    window.location.pathname === '/team6/index.html' ||
+    window.location.pathname.includes('/team6/')) &&
+  !window.location.pathname.includes('/my-library.html')
 ) {
   fetchPosters();
 }
