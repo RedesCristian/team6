@@ -5,7 +5,12 @@ import './js/dark-mode';
 import axios from 'axios';
 import Notiflix from 'notiflix';
 
-const galleryLibrary = document.querySelector('.galleryLibrary');
+if (
+  window.location.pathname === '/' ||
+  window.location.pathname === '/my-library.html'
+) {
+  displayMovies('watched');
+}
 
 if (
   window.location.pathname === '/' ||
@@ -14,6 +19,8 @@ if (
 ) {
   displayMovies('watched');
 }
+
+const galleryLibrary = document.querySelector('.galleryLibrary');
 
 document.querySelector('.watched-btn').addEventListener('click', () => {
   displayMovies('watched');
