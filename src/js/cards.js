@@ -1,23 +1,14 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
 
+const gallery = document.querySelector('.galleryPopular');
+
 if (
-  window.location.pathname === '/' ||
+  window.location.pathname === 'https://redescristian.github.io/team6/' ||
   window.location.pathname === '/index.html'
 ) {
   fetchPosters();
 }
-
-if (
-  window.location.pathname === '/' ||
-  window.location.pathname === 'https://redescristian.github.io/team6/' ||
-  window.location.pathname ===
-    'https://redescristian.github.io/team6/index.html'
-) {
-  fetchPosters();
-}
-
-const gallery = document.querySelector('.galleryPopular');
 
 async function fetchPosters() {
   const API_KEY = '904cc36a32d92a605c14a646cc21fc67';
