@@ -7,13 +7,18 @@ import Notiflix from 'notiflix';
 
 const galleryLibrary = document.querySelector('.galleryLibrary');
 
+if (
+  window.location.pathname === '/' ||
+  window.location.pathname === '/my-library.html'
+) {
+  displayMovies('watched');
+}
+
 document.querySelector('.watched-btn').addEventListener('click', () => {
-  galleryLibrary.innerHTML = '';
   displayMovies('watched');
 });
 
 document.querySelector('.queue-btn').addEventListener('click', () => {
-  galleryLibrary.innerHTML = '';
   displayMovies('queue');
 });
 
@@ -22,7 +27,7 @@ function displayMovies(section) {
   const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
   if (movies.length === 0) {
-    Notiflix.Notify.info(`No movies in ${section.toUpperCase()}`);
+    Notiflix.Notify.info(`No movies in ${section}`);
     return;
   }
 
