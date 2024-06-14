@@ -1,4 +1,3 @@
-
 @keyframes icon-logo {
   0% {
     transform: rotate(0deg);
@@ -96,24 +95,23 @@ body {
   text-align: center;
   border: none;
   cursor: pointer;
-  
 }
-.home-btn:hover{
+.home-btn:hover {
   transition: transform 0.3s ease-out;
   transform: scale(1.05);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
 }
-.library-btn:hover{
+.library-btn:hover {
   transition: transform 0.3s ease-out;
   transform: scale(1.05);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
 }
-.watched-btn:hover{
+.watched-btn:hover {
   transition: transform 0.3s ease-out;
   transform: scale(1.05);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
 }
-.queue-btn:hover{
+.queue-btn:hover {
   transition: transform 0.3s ease-out;
   transform: scale(1.05);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
@@ -154,24 +152,33 @@ body {
 .carousel-img.active {
   display: block;
 }
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .carousel-img.active {
     display: none;
   }
 }
 .header-yellow,
-.header-orange{
+.header-orange {
   width: 100%;
   height: 316px;
   border-radius: 15px;
-  background: linear-gradient(274deg, rgba(0, 0, 0, 0.49) -2.09%, rgba(0, 0, 0, 0.00) 99.83%), lightgray 0px -194px / 100% 216.456% no-repeat;
+  background: linear-gradient(
+      274deg,
+      rgba(0, 0, 0, 0.49) -2.09%,
+      rgba(0, 0, 0, 0) 99.83%
+    ),
+    lightgray 0px -194px / 100% 216.456% no-repeat;
 }
-.header-red
- {
+.header-red {
   width: 100%;
   height: 316px;
   border-radius: 15px;
-  background: linear-gradient(274deg, rgba(0, 0, 0, 0.49) -2.09%, rgba(0, 0, 0, 0.00) 99.83%), lightgray 0px -194px / 100% 216.456% no-repeat;
+  background: linear-gradient(
+      274deg,
+      rgba(0, 0, 0, 0.49) -2.09%,
+      rgba(0, 0, 0, 0) 99.83%
+    ),
+    lightgray 0px -194px / 100% 216.456% no-repeat;
   transform: scaleX(-1);
 }
 
@@ -213,38 +220,47 @@ body {
     font-weight: 500;
     line-height: normal;
   }
-
-
 }
 
 @media (max-width: 768px) {
-    .nav-right {
-     left: 44px; 
-      top: 402px;
-      display: inline-flex;
-justify-content: center;
-align-items: center;
-gap: 4px;
-      display: flex;
-      align-items: center;
-    }
-  
+  .nav-right {
+    left: 44px;
+    top: 402px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    display: flex;
+    align-items: center;
+  }
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .carousel {
     border-radius: 10px;
     width: auto;
     height: 460px;
-    background: 
-        linear-gradient(180deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 65.37%),
-        url(../images/header-image/image-red-responsive.png) lightgray center center / auto no-repeat; 
-        background: 
-        linear-gradient(180deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 65.37%),
-        url(../images/header-image/image-orange-responsive.png) lightgray center center / auto no-repeat;
-        background: 
-        linear-gradient(180deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 65.37%),
-        url(../images/header-image/image-yellow-responsive.png) lightgray center center / auto no-repeat;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.4) 65.37%
+      ),
+      url(../images/header-image/image-red-responsive.png) lightgray center
+        center / auto no-repeat;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.4) 65.37%
+      ),
+      url(../images/header-image/image-orange-responsive.png) lightgray center
+        center / auto no-repeat;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.4) 65.37%
+      ),
+      url(../images/header-image/image-yellow-responsive.png) lightgray center
+        center / auto no-repeat;
     background-blend-mode: multiply;
     background-attachment: fixed;
     overflow: hidden;
@@ -256,18 +272,25 @@ gap: 4px;
     display: none;
   }
 }
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .mobile-carousel-img {
     width: 100%;
-    height: 460px; 
-    display: none; 
+    height: 460px;
+    display: none;
     object-fit: cover;
   }
 
   .mobile-carousel-img.active {
-    display: block; 
+    display: block;
   }
 }
-.mobile-carousel-img{
+.mobile-carousel-img {
   display: none;
+}
+
+.galleryLibrary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
