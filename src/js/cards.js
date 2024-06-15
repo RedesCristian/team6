@@ -1,6 +1,9 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
 
+let currentPage = 1;
+let totalPages = 1;
+
 const gallery = document.querySelector('.galleryPopular');
 
 if (
@@ -11,17 +14,19 @@ if (
     window.location.pathname.includes('/team6/')) &&
   !window.location.pathname.includes('/my-library.html')
 ) {
-  fetchPosters();
+  fetchPosters(currentPage);
 }
 
-async function fetchPosters() {
+async function fetchPosters(page = 1) {
   const API_KEY = '904cc36a32d92a605c14a646cc21fc67';
-  const URL = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&api_key=${API_KEY}`;
+  const URL = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}&api_key=${API_KEY}`;
 
   try {
     const response = await axios.get(URL);
-    const { results } = response.data;
+    const { results, total_pages } = response.data;
+    totalPages = total_pages;
     renderGallery(results);
+    updatePaginationButtons(page);
   } catch (error) {
     console.error(error);
     Notiflix.Notify.failure(
@@ -61,18 +66,18 @@ function renderGallery(posters) {
       const releaseYear = release_date.split('-')[0];
 
       return `
-        <div class="div-poster">
-          <a href="#" data-id="${id}" class="poster-link">
-            <img class="poster-card" src="${
-              BASE_IMG_URL + poster_path
-            }" alt="${original_title}" loading="lazy" />
-          </a>
-          <div class="info">
-            <p class="info-title">${original_title}</p>
-            <p class="info-genre-year">${formattedGenres} | ${releaseYear}</p>
-          </div>
+      <div class="div-poster">
+        <a href="#" data-id="${id}" class="poster-link">
+          <img class="poster-card" src="${
+            BASE_IMG_URL + poster_path
+          }" alt="${original_title}" loading="lazy" />
+        </a>
+        <div class="info">
+          <p class="info-title">${original_title}</p>
+          <p class="info-genre-year">${formattedGenres} | ${releaseYear}</p>
         </div>
-      `;
+      </div>
+    `;
     })
     .join('');
 
@@ -86,6 +91,44 @@ function renderGallery(posters) {
     });
   });
 }
+
+function updatePaginationButtons(page) {
+  const prevButton = document.querySelector('.prev');
+  const nextButton = document.querySelector('.next');
+  const pageButtons = document.querySelectorAll('.page-btn');
+
+  prevButton.disabled = page === 1;
+  nextButton.disabled = page === totalPages;
+
+  pageButtons.forEach(button => {
+    if (button.dataset.shown) return; // Skip step buttons
+    const pageNum = parseInt(button.id.split('-')[1], 10);
+    button.classList.toggle('active', pageNum === page);
+  });
+}
+
+document.querySelector('.prev').addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage--;
+    fetchPosters(currentPage);
+  }
+});
+
+document.querySelector('.next').addEventListener('click', () => {
+  if (currentPage < totalPages) {
+    currentPage++;
+    fetchPosters(currentPage);
+  }
+});
+
+document.querySelectorAll('.page-btn').forEach(button => {
+  if (button.dataset.shown) return; // Skip step buttons
+  button.addEventListener('click', () => {
+    const page = parseInt(button.id.split('-')[1], 10);
+    currentPage = page;
+    fetchPosters(currentPage);
+  });
+});
 
 export async function openModal(id) {
   const API_KEY = '904cc36a32d92a605c14a646cc21fc67';
@@ -198,6 +241,7 @@ function toggleMovieInLibrary(section, movie) {
   }
 
   localStorage.setItem(section, JSON.stringify(movies));
+  updateUi();
 }
 
 function checkMovieInLibrary(section, id) {
