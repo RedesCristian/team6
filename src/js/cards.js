@@ -3,8 +3,9 @@ import Notiflix from 'notiflix';
 
 let currentPage = 1;
 let totalPages = 1;
-
 const gallery = document.querySelector('.galleryPopular');
+const form = document.querySelector('.header-form');
+const input = document.querySelector('.header-form__input');
 
 if (
   (window.location.pathname === '/index.html' ||
@@ -16,6 +17,16 @@ if (
 ) {
   fetchPosters(currentPage);
 }
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const query = input.value.trim();
+  if (query) {
+    await searchMovies(query);
+  } else {
+    Notiflix.Notify.failure('Please enter a movie name.');
+  }
+});
 
 async function fetchPosters(page = 1) {
   const API_KEY = '904cc36a32d92a605c14a646cc21fc67';
@@ -32,6 +43,26 @@ async function fetchPosters(page = 1) {
     Notiflix.Notify.failure(
       'Failed to fetch popular movies. Please try again later.'
     );
+  }
+}
+
+async function searchMovies(query, page = 1) {
+  const API_KEY = '904cc36a32d92a605c14a646cc21fc67';
+  const URL = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(query)}&page=${page}&api_key=${API_KEY}`;
+
+  try {
+    const response = await axios.get(URL);
+    const { results, total_pages } = response.data;
+    totalPages = total_pages;
+    if (results.length > 0) {
+      renderGallery(results);
+      updatePaginationButtons(page);
+    } else {
+      Notiflix.Notify.failure('No movies found. Please try a different search term.');
+    }
+  } catch (error) {
+    console.error(error);
+    Notiflix.Notify.failure('Failed to search for movies. Please try again later.');
   }
 }
 
