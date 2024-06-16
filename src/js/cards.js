@@ -6,7 +6,11 @@ const gallery = document.querySelector('.galleryPopular');
 // Verificare dacă suntem pe pagina corectă pentru a apela fetchPosters
 const isValidPage = () => {
   const validPaths = ['/index.html', '/', '/team6/', '/team6/index.html'];
-  return validPaths.some(path => window.location.pathname === path || window.location.pathname.startsWith(path + '/'));
+  return validPaths.some(
+    path =>
+      window.location.pathname === path ||
+      window.location.pathname.startsWith(path + '/')
+  );
 };
 if (isValidPage() && !window.location.pathname.includes('/my-library.html')) {
   fetchPosters(currentPage);
@@ -22,24 +26,44 @@ async function fetchPosters(page = 1) {
     updatePaginationButtons(page);
   } catch (error) {
     console.error('Error fetching popular movies:', error);
-    Notiflix.Notify.failure('Failed to fetch popular movies. Please try again later.');
+    Notiflix.Notify.failure(
+      'Failed to fetch popular movies. Please try again later.'
+    );
   }
 }
 const genreMap = {
-  28: 'Action', 12: 'Adventure', 16: 'Animation', 35: 'Comedy', 80: 'Crime', 99: 'Documentary',
-  18: 'Drama', 10751: 'Family', 14: 'Fantasy', 36: 'History', 27: 'Horror', 10402: 'Music',
-  9648: 'Mystery', 10749: 'Romance', 878: 'Science Fiction', 10770: 'TV Movie', 53: 'Thriller',
-  10752: 'War', 37: 'Western'
+  28: 'Action',
+  12: 'Adventure',
+  16: 'Animation',
+  35: 'Comedy',
+  80: 'Crime',
+  99: 'Documentary',
+  18: 'Drama',
+  10751: 'Family',
+  14: 'Fantasy',
+  36: 'History',
+  27: 'Horror',
+  10402: 'Music',
+  9648: 'Mystery',
+  10749: 'Romance',
+  878: 'Science Fiction',
+  10770: 'TV Movie',
+  53: 'Thriller',
+  10752: 'War',
+  37: 'Western',
 };
 function renderGallery(posters) {
   const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500';
-  const markup = posters.map(({ id, poster_path, original_title, genre_ids, release_date }) => {
-    const formattedGenres = genre_ids.map(id => genreMap[id]).join(', ');
-    const releaseYear = release_date ? release_date.split('-')[0] : '';
-    return `
+  const markup = posters
+    .map(({ id, poster_path, original_title, genre_ids, release_date }) => {
+      const formattedGenres = genre_ids.map(id => genreMap[id]).join(', ');
+      const releaseYear = release_date ? release_date.split('-')[0] : '';
+      return `
       <div class="div-poster">
         <a href="#" data-id="${id}" class="poster-link">
-          <img class="poster-card" src="${BASE_IMG_URL + poster_path}" alt="${original_title}" loading="lazy" />
+          <img class="poster-card" src="${
+            BASE_IMG_URL + poster_path
+          }" alt="${original_title}" loading="lazy" />
         </a>
         <div class="info">
           <p class="info-title">${original_title}</p>
@@ -47,7 +71,8 @@ function renderGallery(posters) {
         </div>
       </div>
     `;
-  }).join('');
+    })
+    .join('');
   gallery.innerHTML = markup;
   // Adăugare event listener pentru fiecare poster-link
   document.querySelectorAll('.poster-link').forEach(poster => {
@@ -101,12 +126,16 @@ export async function openModal(id) {
     const modalContent = `
       <div class="cards-modal-content">
         <span class="cards-modal-close-button">&times;</span>
-        <img class="cards-modal-poster-card" src="${BASE_IMG_URL + movieData.poster_path}" alt="${movieData.title}" loading="lazy" />
+        <img class="cards-modal-poster-card" src="${
+          BASE_IMG_URL + movieData.poster_path
+        }" alt="${movieData.title}" loading="lazy" />
         <div class="cards-modal-div-info">
           <h2 class="cards-modal-title">${movieData.title}</h2>
           <div class="cards-modal-details">
             <span class="label">Vote / Votes</span>
-            <span class="value">${movieData.vote_average} / ${movieData.vote_count}</span>
+            <span class="value">${movieData.vote_average} / ${
+      movieData.vote_count
+    }</span>
           </div>
           <div class="cards-modal-details">
             <span class="label">Popularity</span>
@@ -118,7 +147,9 @@ export async function openModal(id) {
           </div>
           <div class="cards-modal-details">
             <span class="label">Genre</span>
-            <span class="value">${movieData.genres.map(genre => genre.name).join(', ')}</span>
+            <span class="value">${movieData.genres
+              .map(genre => genre.name)
+              .join(', ')}</span>
           </div>
           <div class="cards-modal-about">
             <span class="label">About</span>
@@ -140,7 +171,9 @@ export async function openModal(id) {
       modal.style.display = 'none';
       document.body.removeChild(modal);
     }
-    modal.querySelector('.cards-modal-close-button').addEventListener('click', closeModal);
+    modal
+      .querySelector('.cards-modal-close-button')
+      .addEventListener('click', closeModal);
     window.addEventListener('click', event => {
       if (event.target === modal) {
         closeModal();
@@ -163,7 +196,9 @@ export async function openModal(id) {
     });
   } catch (error) {
     console.error('Error fetching movie details:', error);
-    Notiflix.Notify.failure('Failed to fetch movie details. Please try again later.');
+    Notiflix.Notify.failure(
+      'Failed to fetch movie details. Please try again later.'
+    );
   }
 }
 function toggleMovieInLibrary(section, movie) {
@@ -171,10 +206,14 @@ function toggleMovieInLibrary(section, movie) {
   const movieIndex = movies.findIndex(m => m.id === movie.id);
   if (movieIndex === -1) {
     movies.push(movie);
-    Notiflix.Notify.info(`The movie has been added to ${section.toUpperCase()}`);
+    Notiflix.Notify.info(
+      `The movie has been added to ${section.toUpperCase()}`
+    );
   } else {
     movies.splice(movieIndex, 1);
-    Notiflix.Notify.info(`The movie has been removed from ${section.toUpperCase()}`);
+    Notiflix.Notify.info(
+      `The movie has been removed from ${section.toUpperCase()}`
+    );
   }
   localStorage.setItem(section, JSON.stringify(movies));
 }
@@ -191,15 +230,3 @@ function updateButtonState(section, id, buttonId) {
     button.textContent = `Add to ${section.toUpperCase()}`;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
