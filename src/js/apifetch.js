@@ -1,21 +1,18 @@
-import axios from 'axios';
-import Notiflix from 'notiflix';
+// apifetch.js
 import { renderGallery, updatePaginationButtons } from './cards.js';
-import { currentPage, totalPages } from './pagination.js'; // importăm currentPage și totalPages
+import { setTotalPages } from './pagination.js'; // Import the setter function
+
 export async function fetchPosters(page = 1) {
   const API_KEY = '904cc36a32d92a605c14a646cc21fc67';
   const URL = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}&api_key=${API_KEY}`;
   try {
     const response = await axios.get(URL);
     const { results, total_pages } = response.data;
-    totalPages = total_pages;
+    setTotalPages(total_pages); // Use the setter function to update totalPages
     renderGallery(results);
     updatePaginationButtons();
   } catch (error) {
-    console.error('Error fetching popular movies:', error);
-    Notiflix.Notify.failure(
-      'Failed to fetch popular movies. Please try again later.'
-    );
+    console.error('Error fetching data:', error);
   }
 }
 // Definim funcția setupPagination
@@ -39,7 +36,7 @@ export function setupPagination() {
     if (button.dataset.shown) return; // Omitere butoanele de pas
     button.addEventListener('click', () => {
       const page = parseInt(button.id.split('-')[1], 10);
-      currentPage = page;
+      currentPage = 'page';
       fetchPosters(currentPage); // Apelăm fetchPosters cu pagina selectată
     });
   });

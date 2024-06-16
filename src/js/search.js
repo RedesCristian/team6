@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const posterLink = event.target.closest('.poster-link');
     if (posterLink) {
       const id = posterLink.dataset.id;
+      openModal(id);
     }
   });
 });
