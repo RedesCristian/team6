@@ -241,7 +241,6 @@ function toggleMovieInLibrary(section, movie) {
   }
 
   localStorage.setItem(section, JSON.stringify(movies));
-  updateUi();
 }
 
 function checkMovieInLibrary(section, id) {
