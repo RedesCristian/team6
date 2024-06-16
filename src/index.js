@@ -3,7 +3,6 @@ import './js/cards';
 import './js/dark-mode';
 import './js/spinner.js';
 import './js/search.js';
-import './js/test.js';
 import './js/apifetch.js'; // Importăm fișierul apifetch.js
 import './js/pagination.js';
 import './js/modal.js';
