@@ -1,4 +1,9 @@
+body {
+  transition: background-color 0.4s ease; 
+}
+
 .theme-toggle {
+  z-index: 4;
   display: flex;
   justify-content: center;
   align-items: center;
