@@ -55,6 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const posterLink = event.target.closest('.poster-link');
     if (posterLink) {
       const id = posterLink.dataset.id;
+<<<<<<< HEAD
+=======
+      await openModal(id);
+>>>>>>> parent of 78bf812 (Update search.js)
     }
   });
 });
