@@ -52,7 +52,7 @@ const genreMap = {
   10752: 'War',
   37: 'Western',
 };
-function renderGallery(posters) {
+export function renderGallery(posters) {
   const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500';
   const markup = posters
     .map(({ id, poster_path, original_title, genre_ids, release_date }) => {
@@ -83,7 +83,7 @@ function renderGallery(posters) {
     });
   });
 }
-function updatePaginationButtons(page) {
+export function updatePaginationButtons(page) {
   const prevButton = document.querySelector('.prev');
   const nextButton = document.querySelector('.next');
   const pageButtons = document.querySelectorAll('.page-btn');
