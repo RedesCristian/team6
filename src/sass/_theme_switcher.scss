@@ -1,7 +1,19 @@
 body {
   transition: background-color 0.4s ease; 
 }
-
+.dark-library {
+  z-index: 3;
+  display: flex;
+  position: absolute;
+  top: 217px;
+  right: 32px;
+  position: absolute;
+}
+@media (max-width: 768px) {
+  .dark-library {
+     visibility: hidden;
+  }
+}
 .theme-toggle {
   z-index: 4;
   display: flex;
