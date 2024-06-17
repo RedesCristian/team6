@@ -334,6 +334,10 @@
   }
 }
 
+.header-logo__link {
+  text-decoration: none;
+}
+
 .header-logo__link:hover {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), 0 0 black, 1px 1px 5px black;
 }
