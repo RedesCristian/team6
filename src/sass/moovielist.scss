@@ -1,3 +1,88 @@
+
+.galleryPopular .info-title,
+.galleryPopular  {
+  color: #000;
+}
+
+body {
+  background-color: #fff;
+}
+
+
+body[data-theme="dark"] .galleryPopular .info-title,
+body[data-theme="dark"] .galleryPopular  {
+  color: #fff;
+}
+
+body[data-theme="dark"] {
+  background-color: #333;
+}
+
+
+.galleryPopular {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+body[data-theme="dark"] .galleryLibrary .info-title,
+body[data-theme="dark"] .galleryLibrary  {
+  color: #fff;
+}
+
+.div-poster {
+  transition: transform 0.3s;
+}
+
+.div-poster:hover {
+  transform: scale(1.05);
+}
+
+.poster-card {
+  width: 395px;
+  height: 574px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.poster-card img {
+  width: 100%;
+  height: auto;
+}
+
+.info {
+  padding: 10px;
+  margin-top: -10px;
+}
+
+.info-title {
+  color: #000;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 8px;
+  margin-top: -4px;
+}
+
+.info-genre-year {
+  color: #b92f2c;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: -8px;
+}
+
+
+
 .galleryPopular {
   display: flex;
   flex-wrap: wrap;
