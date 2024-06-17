@@ -162,14 +162,17 @@ export async function openModal(id) {
         </div>
       </div>
     `;
-    const modal = document.createElement('div');
-    modal.classList.add('cards-modal-modal');
+  let modal = document.querySelector('.cards-modal-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.classList.add('cards-modal-modal');
+      document.body.appendChild(modal);
+    }
+    
     modal.innerHTML = modalContent;
-    document.body.appendChild(modal);
     modal.style.display = 'block';
     function closeModal() {
       modal.style.display = 'none';
-      document.body.removeChild(modal);
     }
     modal
       .querySelector('.cards-modal-close-button')
