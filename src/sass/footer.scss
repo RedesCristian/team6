@@ -82,15 +82,49 @@
   position: relative;
 }
 .modal-header {
-  color: #ffc107; /* Text portocaliu */
-  margin-bottom: 15px;
+  color: #ffc107;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
+@media screen and (max-width: 768px) {
+  .modal-header {
+    font-size: 25px;
+    font-weight: 500;
+  }
+}
+
 .modal-header:hover {
   filter: drop-shadow(0 0 0.75rem #ffc107);
+}
+@media screen and (max-width: 768px) {
+  .modal-list {
+    list-style: none;
+    padding: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
 }
 .modal-list {
   list-style: none;
   padding: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 .inlink {
   color: #ffc107; /* Linkuri portocalii */
