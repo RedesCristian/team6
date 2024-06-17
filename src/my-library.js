@@ -62,4 +62,4 @@ function displayMovies(section) {
   });
 }
 
-import { openModal } from './js/cards.js';
+import { openModal } from './js/modal.js';
