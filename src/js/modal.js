@@ -98,6 +98,7 @@ function toggleMovieInLibrary(section, movie) {
     Notiflix.Notify.info(
       `The movie has been removed from ${section.toUpperCase()}`
     );
+    refreshPage();
   }
   localStorage.setItem(section, JSON.stringify(movies));
 }
@@ -105,6 +106,12 @@ function checkMovieInLibrary(section, id) {
   const movies = JSON.parse(localStorage.getItem(section)) || [];
   return movies.some(movie => movie.id === id);
 }
+function refreshPage() {
+  var page_y = document.getElementsByTagName('body')[0].scrollTop; //functie de actualizat pagina
+  window.location.href =
+    window.location.href.split('?')[0] + '?page_y=' + page_y;
+}
+
 function updateButtonState(section, id, buttonId) {
   const isInLibrary = checkMovieInLibrary(section, id);
   const button = document.getElementById(buttonId);
