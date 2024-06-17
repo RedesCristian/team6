@@ -1,6 +1,5 @@
-
 .galleryPopular .info-title,
-.galleryPopular  {
+.galleryPopular {
   color: #000;
 }
 
@@ -8,16 +7,14 @@ body {
   background-color: #fff;
 }
 
-
-body[data-theme="dark"] .galleryPopular .info-title,
-body[data-theme="dark"] .galleryPopular  {
+body[data-theme='dark'] .galleryPopular .info-title,
+body[data-theme='dark'] .galleryPopular {
   color: #fff;
 }
 
-body[data-theme="dark"] {
+body[data-theme='dark'] {
   background-color: #333;
 }
-
 
 .galleryPopular {
   display: flex;
@@ -25,8 +22,8 @@ body[data-theme="dark"] {
   gap: 20px;
   justify-content: center;
 }
-body[data-theme="dark"] .galleryLibrary .info-title,
-body[data-theme="dark"] .galleryLibrary  {
+body[data-theme='dark'] .galleryLibrary .info-title,
+body[data-theme='dark'] .galleryLibrary {
   color: #fff;
 }
 
@@ -63,25 +60,29 @@ body[data-theme="dark"] .galleryLibrary  {
 .info-title {
   color: #000;
   font-family: Roboto;
-  font-size: 20px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
   margin-bottom: 8px;
   margin-top: -4px;
+  padding-left: 25px;
+  text-wrap: wrap;
+  width: 350px;
 }
 
 .info-genre-year {
   color: #b92f2c;
   font-family: Roboto;
-  font-size: 20px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
   margin-top: -8px;
+  text-wrap: wrap;
+  padding-left: 25px;
+  width: 350px;
 }
-
-
 
 .galleryPopular {
   display: flex;
@@ -187,7 +188,6 @@ body[data-theme="dark"] .galleryLibrary  {
 }
 
 .cards-modal-poster-card {
-  max-width: 40%;
   border-radius: 10px;
   margin-right: 20px;
 }
@@ -291,11 +291,17 @@ body[data-theme="dark"] .galleryLibrary  {
     width: 90%;
     flex-direction: column;
     align-items: center;
+    font-size: 12px;
+    margin-top: 0;
   }
 
   .cards-modal-poster-card {
-    max-width: 100%;
+    width: 90%;
     margin-right: 0;
     margin-bottom: 20px;
+  }
+
+  .cards-modal-title {
+    font-size: 14px;
   }
 }
