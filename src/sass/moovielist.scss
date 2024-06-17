@@ -145,7 +145,7 @@ body[data-theme='dark'] .galleryLibrary {
 .cards-modal-modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   left: 0;
   top: 0;
   width: 100%;
@@ -190,6 +190,7 @@ body[data-theme='dark'] .galleryLibrary {
 .cards-modal-poster-card {
   border-radius: 10px;
   margin-right: 20px;
+  width: 50%;
 }
 
 .cards-modal-div-info {
