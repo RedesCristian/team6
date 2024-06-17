@@ -45,30 +45,6 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  .theme-toggle {
-    top: -29px;
-  }
-}
-.theme-toggle {
-  position: absolute;
-  left: 0;
-  top: -4px;
-  border-radius: 20px;
-  border: none;
-  border: no border;
-  background-color: transparent;
-}
-
-@media screen and (max-width: 768px) {
-  .theme-toggle {
-    top: -29px;
-  }
-}
-.theme-toggle:hover {
-  cursor: pointer;
-}
-
 .header-home__wrapper {
   margin-bottom: 312px;
 }
@@ -732,7 +708,7 @@ html {
 
 .modal {
   background-color: rgba(0, 0, 0, 0.5); /* Fundal semitransparent */
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: fixed;

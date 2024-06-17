@@ -45,7 +45,7 @@ body {
 }
 
 .container {
-  max-width: 100vw;
+  width: 100%;
   margin: 0 auto;
   padding: 0;
   position: relative;
@@ -308,7 +308,7 @@ body {
 
 .modal {
   background-color: rgba(0, 0, 0, 0.5); /* Fundal semitransparent */
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: fixed;
