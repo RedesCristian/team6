@@ -85,7 +85,7 @@
   color: #ffc107;
   text-align: center;
   font-family: Roboto;
-  font-size: 32px;
+  font-size: 42px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -100,20 +100,18 @@
 .modal-header:hover {
   filter: drop-shadow(0 0 0.75rem #ffc107);
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 428px) {
   .modal-list {
-    list-style: none;
-    padding: 0;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+    font-size: 13px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .modal-list {
+    font-size: 16px;
+  }
+}
+
 .modal-list {
   list-style: none;
   padding: 0;
@@ -121,10 +119,14 @@
   list-style: none;
   text-align: center;
   font-family: Roboto;
-  font-size: 16px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin-top: 15px;
+}
+.social-class {
+  margin-bottom: 15px;
 }
 .inlink {
   color: #ffc107; /* Linkuri portocalii */
